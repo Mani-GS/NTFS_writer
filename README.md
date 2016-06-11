@@ -3,6 +3,9 @@ Write files on NTFS devices with MAC OS X.
 This simple scritp allows you to write on NTFS partitions from your MAC, without buying anithing!
 You must have root privileges to let it run!
 
+# Issues
+When you write a file from a MAC to an NTFS device, you probably won't able to open/copy this file, because it's "in use from OS X". To fix it the script, when you plug in a NTFS device, run the SetFile instruction for every file in the device. This instrucion allow you to open/copy/move/delete the file.
+
 # How to use
 ## Run the script manually
 If you want to run the script manually, you can place in your desktop the file named **ntfs_writer.sh**.
