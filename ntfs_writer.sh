@@ -104,9 +104,11 @@ do
 		echo "Re-mounting ${var} ..."
 		diskutil mount ${var}
 	fi
-	
+done
+
+for var in "${ET[@]}"
+do
 	cd /Volumes/${var}
-		
 	global check_files
 done
 
