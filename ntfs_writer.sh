@@ -2,6 +2,44 @@
 
 #this script was created by Mani on 09 June 2016
 
+global() {
+  	subdirs=()
+  	
+  	eval "$@"
+  	
+	for i in **/; do
+		subdirs+=("$i")
+  	done
+  	
+  	if [ "${subdirs[0]}" != "**/" ]
+  	then	
+  	
+  		for i in "${subdirs[@]}"
+  		do
+  			cd "$i"
+  			echo -n "${PWD}: "
+  			
+  			eval "global $@"
+  			
+  			cd ".."
+  		done
+  	
+  	fi
+}
+
+check_files() {
+	SAVEIFS=$IFS
+	IFS=$(echo -en "\n\b")
+
+	for f in *
+	do
+		setfile -c "" -t "" "$f"
+		echo "File ${PWD}/$f controlled"
+	done
+	
+	IFS=$SAVEIFS
+}
+
 clear
 
 echo "Welcome!"
@@ -68,17 +106,8 @@ do
 	fi
 	
 	cd /Volumes/${var}
-	
-	SAVEIFS=$IFS
-	IFS=$(echo -en "\n\b")
-
-	for f in *
-	do
-  		setfile -c "" -t "" "$f"
-  		echo "File $var/$f controlled"
-	done
-	
-	IFS=$SAVEIFS
+		
+	global check_files
 done
 
 echo ""
