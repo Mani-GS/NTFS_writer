@@ -2,44 +2,6 @@
 
 #this script was created by Mani on 09 June 2016
 
-global() {
-  	subdirs=()
-  	
-  	eval "$@"
-  	
-	for i in **/; do
-		subdirs+=("$i")
-  	done
-  	
-  	if [ "${subdirs[0]}" != "**/" ]
-  	then	
-  	
-  		for i in "${subdirs[@]}"
-  		do
-  			cd "$i"
-  			echo -n "${PWD}: "
-  			
-  			eval "global $@"
-  			
-  			cd ".."
-  		done
-  	
-  	fi
-}
-
-check_files() {
-	SAVEIFS=$IFS
-	IFS=$(echo -en "\n\b")
-
-	for f in *
-	do
-		setfile -c "" -t "" "$f"
-		echo "File ${PWD}/$f controlled"
-	done
-	
-	IFS=$SAVEIFS
-}
-
 clear
 
 echo "Welcome!"
@@ -86,7 +48,7 @@ do
 	label=1
 	while IFS= read -r line
 	do
-		if [ "$line" = "LABEL=${var} none ntfs rw,auto,nobrowse" ]
+		if [ "$line" = "LABEL=${var} none ntfs rw,auto,nobrowse #NTFS_Writer" ]
 		then
 			label=0
 			break
@@ -98,16 +60,12 @@ do
 		echo "${var} already in fstab"
 	else
 		echo "${var} must be added"
-		echo "LABEL=${var} none ntfs rw,auto,nobrowse" >> $input
+		echo "LABEL=${var} none ntfs rw,auto,nobrowse #NTFS_Writer" >> $input
 		echo "Unmounting ${var} ..."
 		diskutil umount ${var}
 		echo "Re-mounting ${var} ..."
 		diskutil mount ${var}
 	fi
-	
-	cd /Volumes/${var}
-		
-	global check_files
 done
 
 echo ""

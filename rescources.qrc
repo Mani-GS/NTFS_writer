@@ -1,0 +1,12 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="images">
+    <file alias="drop.png">images/drop.png</file>
+    <file alias="refresh.png">images/refresh.png</file>
+    <file alias="copy.png">images/copy.png</file>
+    <file alias="stop.png">images/stop.png</file>
+</qresource>
+<qresource prefix="translations">
+	<file alias="NTFS_Writer_it">NTFS_Writer_it.qm</file>
+	<file alias="fervor_it">fervor/fervor_it.qm</file>
+</qresource>
+</RCC>

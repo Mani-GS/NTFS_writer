@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AboutDialog</class>
+ <widget class="QDialog" name="AboutDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>584</width>
+    <height>388</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>About NTFS Writer...</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#lcdVersion{
+	color: #FF0000;
+	min-width: 261px;
+	min-height: 111px;
+	max-width: 265px;
+	max-height: 120px;
+}
+
+#lblIcon{
+	min-width: 131px;
+	min-height: 121px;
+	max-width: 135px;
+	max-height: 125px;
+}
+
+QLineEdit{
+	min-width: 350px;
+	max-width: 500px;
+}
+
+QLabel{
+	min-width: 200px;
+	max-width: 500px;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblIcon">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>images/Drop.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblApp">
+     <property name="text">
+      <string>NTFS Writer v1.2</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblLicense">
+     <property name="text">
+      <string>License</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLCDNumber" name="lcdVersion">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="value" stdset="0">
+      <double>1.200000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="txtLicense">
+     <property name="text">
+      <string notr="true">GPL 3</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="lblHomepage">
+     <property name="text">
+      <string>Homepage</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="lblSourceCode">
+     <property name="text">
+      <string>Source code</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblAuthor">
+     <property name="text">
+      <string>Author</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lalMaintainer">
+     <property name="text">
+      <string>Maintainer</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblMail">
+     <property name="text">
+      <string>e-mail</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="lblLanguage">
+     <property name="text">
+      <string>Launguage &amp; libraries</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="text">
+      <string notr="true">Giorgio Sartore</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="text">
+      <string notr="true">Giorgio Sartore</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="text">
+      <string notr="true">mani.ddev@gmail.com</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="lineEdit_4">
+     <property name="text">
+      <string notr="true">http://mani-gs.github.io/NTFS_writer</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLineEdit" name="lineEdit_5">
+     <property name="text">
+      <string notr="true">https://github.com/Mani-GS/NTFS_writer</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QLineEdit" name="lineEdit_6">
+     <property name="text">
+      <string notr="true">Written in C++ using Qt libraries</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

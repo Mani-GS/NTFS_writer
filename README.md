@@ -1,48 +1,55 @@
 # NTFS writer
 Write files on NTFS devices with MAC OS X.
-This simple scritp allows you to write on NTFS partitions from your MAC, without buying anithing!
+With this app you can copy files on your NTFS devices from your MAC.
 You must have root privileges to let it run!
 
-# How to use
-## Run the script manually
-If you want to run the script manually, you can place in your desktop the file named **ntfs_writer.sh**.
-Each time you want to run it you have to open a terminal window:
-- press cmd + space;
-- write "terminal" and press enter;
-- write the following instructions:
-```script
-$ cd desktop
-$ sudo ./ntfs_writer.sh
-[insert your admin password]
-```
-## Install the daemon
-You can install the daemon: in this way the script will start automatically when you plug an USB device into your MAC.
-To install the daemon you must:
-- press cmd + space;
-- write "terminal" and press enter;
-- write the following instruction:
-```script
-$ open /users/your_user_name
-```
-- your home will be open in a Finder window: create a folder named "bin" and, inside it, place the three files (preferably into a subfolder;
-- back in the terminal window, write this:
-```script
-$ cd bin
-[if you created a subfolder, execute also "cd subfolder-name"]
-$ sudo ./installer.sh
-[insert your admin password]
-```
-If you don't get errors, its done!
+## Setup
+First of all, put the app inside Applications folder. If you don't do this, the app can't start. Then, you must install the daemon to make the app works properly.
+You only have to insert your admin password.
 
-## Uninstall the daemon
-If you want to uninstall the daemon, you just have to do this:
-- press cmd + space;
-- write "terminal" and press enter;
-- write the following instruction:
+## The daemon
+Every time you plug an USB device, the daemon will activate and check it. If it found some new NTFS devices, it add them to the fstab file.
+From that moment, you won't see the NTFS devices on your desktop. You have to open the Volumes folder or create a link to it. You can use the app to do this.
+If you'll remove the app from Applications folder without uninstalling the daemon, it will self-delete (when you plug an USB device), removing all the lines written on fstab and making visible to you all the devices associated.
+
+## Copying files
+To copy files you have to open the app, having an NTFS device plugged in and the daemon installed.
+Just drag and drop all the files to copy in the app's drop area. Then, press copy.
+It will alert if there are some files/folders with the same name on the device.
+
+## Why using the app and not the Finder?
+If you use the Finder to copy files (with the daemon installed), it will copy all of them on the device. And it seems to be ok, until you plug off the device.
+The next time you plug it in, you'll see the files copied, but you will not able to open/copy/move them. Why? Because the Finder "forgets" to release them.
+So, the OS will think that these files are in use, and it won't allow you to use them.
+Using the app instead of the Finder will ensure you to correctly copy the files.
+
+# How to build
+To build this program make sure you installed all the **Qt** libraries.
+Also be sure to export the _**qmake path**_ in this way:
+
 ```script
-$ cd bin
-[if you created a subfolder, execute also "cd subfolder-name"]
-$ sudo ./uninstaller.sh
-[insert your admin password]
+$ PATH=/users/<your_user>/Qt/<qt_version>/bin:$PATH
+$ export PATH
 ```
-If you don't get errors, its done!
+
+First of all, download the [latest release](https://github.com/Mani-GS/NTFS_writer/releases/latest), then extract the source code in one folder. Open a terminal in that folder and execute:
+
+```script
+$ qmake -config release
+$ make
+```
+
+Then right-click the app, select "Show package contents" and copy the "script" folder inside "Contents".
+On a terminal, execute this:
+
+```script
+$ chmod 755 NTFS_Writer.app
+```
+
+If you want to run it on another MAC (a MAC without Qt libraries), you have to execute this:
+
+```script
+$ macdeployqt ./series.app
+```
+
+Double click the APP file, named **NTFS_Writer**, and the program will start!
