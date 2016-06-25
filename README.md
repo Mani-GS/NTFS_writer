@@ -3,6 +3,8 @@ Write files on NTFS devices with MAC OS X.
 With this app you can copy files on your NTFS devices from your MAC.
 You must have root privileges to let it run!
 
+![](http://mani-gs.github.io/NTFS_writer/images/appScreen.png "Main view")
+
 ## Setup
 First of all, put the app inside Applications folder. If you don't do this, the app can't start. Then, you must install the daemon to make the app works properly.
 You only have to insert your admin password.
