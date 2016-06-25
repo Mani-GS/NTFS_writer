@@ -49,7 +49,7 @@ $ chmod 755 NTFS_Writer.app
 If you want to run it on another MAC (a MAC without Qt libraries), you have to execute this:
 
 ```script
-$ macdeployqt ./series.app
+$ macdeployqt ./NTFS_Writer.app
 ```
 
 Double click the APP file, named **NTFS_Writer**, and the program will start!
