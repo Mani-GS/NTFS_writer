@@ -3,6 +3,7 @@ Write files on NTFS devices with MAC OS X.
 With this app you can copy files on your NTFS devices from your MAC.
 You must have root privileges to let it run!
 
+<<<<<<< HEAD
 ## Setup
 First of all, put the app inside Applications folder. If you don't do this, the app can't start. Then, you must install the daemon to make the app works properly.
 You only have to insert your admin password.
@@ -27,6 +28,18 @@ Using the app instead of the Finder will ensure you to correctly copy the files.
 To build this program make sure you installed all the **Qt** libraries.
 Also be sure to export the _**qmake path**_ in this way:
 
+=======
+# Issues
+When you write a file from a MAC to an NTFS device, you probably won't able to open/copy this file, because it's "in use from OS X". To fix it the script, when you plug in a NTFS device, run the SetFile instruction for every file in the device. This instrucion allow you to open/copy/move/delete the file.
+
+# How to use
+## Run the script manually
+If you want to run the script manually, you can place in your desktop the file named **ntfs_writer.sh**.
+Each time you want to run it you have to open a terminal window:
+- press cmd + space;
+- write "terminal" and press enter;
+- write the following instructions:
+>>>>>>> 5c66364150d07e9b91f888e495f035e6231cf3ad
 ```script
 $ PATH=/users/<your_user>/Qt/<qt_version>/bin:$PATH
 $ export PATH

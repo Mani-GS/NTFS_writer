@@ -66,6 +66,15 @@ do
 		echo "Re-mounting ${var} ..."
 		diskutil mount ${var}
 	fi
+<<<<<<< HEAD:scripts/ntfs_writer.sh
+=======
+done
+
+for var in "${ET[@]}"
+do
+	cd /Volumes/${var}
+	global check_files
+>>>>>>> 5c66364150d07e9b91f888e495f035e6231cf3ad:ntfs_writer.sh
 done
 
 echo ""
