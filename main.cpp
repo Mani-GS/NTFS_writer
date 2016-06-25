@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     MainWindow w;
     
-    if(strcmp(argv[0], "/Applications/NTFS_Writer.app/Contents/MacOs/NTFS_Writer") != 0){
+    if(strcmp(argv[0], "/Applications/NTFS_Writer.app/Contents/MacOS/NTFS_Writer") != 0){
         QMessageBox::warning(NULL, "Error", "This app must be inside Applications folder.");
         return -1;
     }
