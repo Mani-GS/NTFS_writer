@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ntfs writer by Mani-GS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Ntfs writer</h1>
+      <h2 class="project-tagline">Write files on NTFS devices with MAC OS X</h2>
+      <a href="https://github.com/Mani-GS/NTFS_writer" class="btn">View on GitHub</a>
+      <a href="https://github.com/Mani-GS/NTFS_writer/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Mani-GS/NTFS_writer/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="ntfs-writer" class="anchor" href="#ntfs-writer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NTFS writer</h1>
+
+<p>Write files on NTFS devices with MAC OS X.
+With this app you can copy files on your NTFS devices from your MAC.
+You must have root privileges to let it run!</p>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
+
+<p>First of all, put the app inside Applications folder. If you don't do this, the app can't start. Then, you must install the daemon to make the app works properly.
+You only have to insert your admin password.</p>
+
+<h2>
+<a id="the-daemon" class="anchor" href="#the-daemon" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The daemon</h2>
+
+<p>Every time you plug an USB device, the daemon will activate and check it. If it found some new NTFS devices, it add them to the fstab file.
+From that moment, you won't see the NTFS devices on your desktop. You have to open the Volumes folder or create a link to it. You can use the app to do this.
+If you'll remove the app from Applications folder without uninstalling the daemon, it will self-delete (when you plug an USB device), removing all the lines written on fstab and making visible to you all the devices associated.</p>
+
+<h2>
+<a id="copying-files" class="anchor" href="#copying-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Copying files</h2>
+
+<p>To copy files you have to open the app, having an NTFS device plugged in and the daemon installed.
+Just drag and drop all the files to copy in the app's drop area. Then, press copy.
+It will alert if there are some files/folders with the same name on the device.</p>
+
+<h2>
+<a id="why-using-the-app-and-not-the-finder" class="anchor" href="#why-using-the-app-and-not-the-finder" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why using the app and not the Finder?</h2>
+
+<p>If you use the Finder to copy files (with the daemon installed), it will copy all of them on the device. And it seems to be ok, until you plug off the device.
+The next time you plug it in, you'll see the files copied, but you will not able to open/copy/move them. Why? Because the Finder "forgets" to release them.
+So, the OS will think that these files are in use, and it won't allow you to use them.
+Using the app instead of the Finder will ensure you to correctly copy the files.</p>
+
+<h1>
+<a id="how-to-build" class="anchor" href="#how-to-build" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to build</h1>
+
+<p>To build this program make sure you installed all the <strong>Qt</strong> libraries.
+Also be sure to export the <em><strong>qmake path</strong></em> in this way:</p>
+
+<pre lang="script"><code>$ PATH=/users/&lt;your_user&gt;/Qt/&lt;qt_version&gt;/bin:$PATH
+$ export PATH
+</code></pre>
+
+<p>First of all, download the <a href="https://github.com/Mani-GS/NTFS_writer/releases/latest">latest release</a>, then extract the source code in one folder. Open a terminal in that folder and execute:</p>
+
+<pre lang="script"><code>$ qmake -config release
+$ make
+</code></pre>
+
+<p>Then right-click the app, select "Show package contents" and copy the "script" folder inside "Contents".
+On a terminal, execute this:</p>
+
+<pre lang="script"><code>$ chmod 755 NTFS_Writer.app
+</code></pre>
+
+<p>If you want to run it on another MAC (a MAC without Qt libraries), you have to execute this:</p>
+
+<pre lang="script"><code>$ macdeployqt ./NTFS_Writer.app
+</code></pre>
+
+<p>Double click the APP file, named <strong>NTFS_Writer</strong>, and the program will start!</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Mani-GS/NTFS_writer">Ntfs writer</a> is maintained by <a href="https://github.com/Mani-GS">Mani-GS</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
