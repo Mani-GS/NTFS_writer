@@ -21,7 +21,7 @@
 
 			<!-- OS X version.  -->
 			<enclosure
-				url="https://github.com/Mani-GS/NTFS_writer/archive/v1.2/NTFS_Writer_1.2.dmg"
+				url="https://github.com/Mani-GS/NTFS_writer/releases/download/v1.2/NTFS_Writer_1.2.dmg"
 				sparkle:version="1.2"
 				fervor:platform="Q_OS_MAC"
 				type="application/octet-stream" />
