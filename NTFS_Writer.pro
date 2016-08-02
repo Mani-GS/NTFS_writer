@@ -10,7 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = NTFS_Writer
 TEMPLATE = app
-VERSION = 1.2
+VERSION = 1.3
 TEMPLATE = app
 CONFIG += warn_on
 

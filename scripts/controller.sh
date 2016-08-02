@@ -11,8 +11,8 @@ then
 	sudo /Applications/NTFS_Writer.app/Contents/scripts/ntfs_writer.sh
 else
 	echo "App NTFS Writer not found! Uninstalling Daemons ..."
-	sudo launchctl unload /Library/LaunchAgents/com.ntfs_writer.plist
-	sudo rm /Library/LaunchAgents/com.ntfs_writer.plist
+	sudo launchctl unload /Library/LaunchDaemons/com.ntfs_writer.plist
+	sudo rm /Library/LaunchDaemons/com.ntfs_writer.plist
 	echo "Removing lines from fstab ..."
 	sudo sed -i.bak '/#NTFS_Writer/d' /etc/fstab
 	echo "Removing controller.sh ..."

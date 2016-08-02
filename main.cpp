@@ -8,7 +8,7 @@
 
 int main(int argc, char *argv[]) {
     QApplication::setApplicationName("NTFS_Writer");
-    QApplication::setApplicationVersion("1.2");
+    QApplication::setApplicationVersion("1.3");
     QApplication::setOrganizationName("Mani");
     QApplication::setOrganizationDomain("Mani.it");
     

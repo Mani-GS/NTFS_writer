@@ -53,9 +53,9 @@ echo "</plist>" >> $plist
 
 echo ""
 echo "Copying plist file on system library folder ... "
-sudo cp /Applications/NTFS_Writer.app/Contents/scripts/com.ntfs_writer.plist /Library/LaunchAgents/
+sudo cp /Applications/NTFS_Writer.app/Contents/scripts/com.ntfs_writer.plist /Library/LaunchDaemons/
 echo "Activating the daemon ... "
-sudo launchctl load /Library/LaunchAgents/com.ntfs_writer.plist
+sudo launchctl load /Library/LaunchDaemons/com.ntfs_writer.plist
 
 cd "${1}"
 mkdir .ntfs_writer
