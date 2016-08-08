@@ -50,7 +50,7 @@ void Manager::main(){
 }
 
 void Manager::checkInstallation(){
-    if(system("cd /Library/LaunchAgents && ls | grep com.ntfs_writer.plist")){
+    if(system("cd /Library/LaunchDaemons && ls | grep com.ntfs_writer.plist")){
         QMessageBox::warning(NULL, tr("Warning"), tr("The daemon isn't installed, this app needs it installed to run properly.\nInstalling the daemon now."));
 
         struct passwd *pw = getpwuid(getuid());
